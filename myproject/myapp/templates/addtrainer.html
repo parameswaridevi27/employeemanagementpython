@@ -1,0 +1,50 @@
+<form action="" method="POST">
+    {% csrf_token %}
+  <table align='center'>
+      <style>
+          body{
+              color:forestgreen;
+              font-family: cursive
+          }
+      </style>
+        <body background="../static/img4.jpg">   
+            <tr><td align='center'><h1>ADD TRAINER</h1</td></tr>
+           
+            <tr>
+            <td align='center'><b>Trainer Name</b></td>
+            <td><input type="text" name="trname" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'><b>Location</b></td>
+            <td><input type="text" name="location" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'><b>Specialization</b></td>
+            <td><input type="text" name="spec" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'><b>Contact No.</b></td>
+            <td><input type="text" name="cno" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'><b>UserName</b></td>
+            <td><input type="text" name="uname" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'><b>Password</b></td>
+            <td><input type="text" name="pwd" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'> <button type="submit">save</button></td>
+            </tr>
+        </body>
+                
+    </table>
+    </form>
+         

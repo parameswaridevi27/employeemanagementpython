@@ -1,0 +1,62 @@
+<body background="../static/img5.jpg">       
+<table align='center'>
+        <style>
+            h1{
+                font-family: cursive;
+                color:black;
+                text-align: center
+            }
+            body{
+                background-repeat: no-repeat;
+                background-size: cover
+            }
+
+            a:link, a:visited {
+        background-color:whitesmoke;
+        color: darkblue;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 12px;
+    }
+    a:hover, a:active {
+        background-color: yellow;
+    }
+        </style>
+        <h1>ADMIN</h1>
+   <tr>
+    <td><a href="addtrainer"><b>Add Trainer</b></a></td>
+  
+   <td><a href="addtrainee"><b>Add Trainee</b></a></td>
+  </tr>
+</table>
+
+<table border=2 align='center'>
+        <tr>
+            <th>Trainee Name</th>
+            <th>Location</th>
+            <th>Qualification</th>
+            <th>Department</th>
+            <th>Trainer Name</th>
+            <th>Trainer Specialization</th>  
+        </tr>
+    </thead>
+
+     <tbody>
+         {% for d in data %}
+  <tr>
+    <td>{{d.1}}</td>
+    <td>{{d.2}}</td>
+    <td>{{d.3}}</td>
+    <td>{{d.4}}</td>
+    <td>{{d.5}}</td>
+    <td>{{d.6}}</td>
+    <td>
+            <a href="viewfeedback?id={{d.0}}">Trainee feedback</a>
+          </td>
+</tr>
+            {% endfor %}
+
+</tbody>
+</table>

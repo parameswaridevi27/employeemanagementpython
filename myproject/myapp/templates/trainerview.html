@@ -1,0 +1,53 @@
+
+    <table border=2 >
+            <body background="../static/img11.png">
+        <style>
+            body{
+                background-repeat: no-repeat;
+                background-size: cover
+            }
+            h1{
+                color:darkmagenta
+            }
+             a:link, a:visited {
+        background-color:greenyellow;
+        color: darkblue;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 12px;
+    }
+    a:hover, a:active {
+        background-color: red;
+    }
+    td{
+        color:red
+    }
+        </style>
+            
+      <h1>TRAINEE DETAILS</h1>
+      <thead>
+          <tr>
+              <th>Trainee Name</th>
+              <th>Location</th>
+              <th>Qualification</th>
+              <th>Department</th>
+             
+          </tr>
+      </thead>
+  
+       <tbody>
+           {% for d1 in data1 %}
+    <tr>
+      <td>{{d1.1}}</td>
+      <td>{{d1.2}}</td>
+      <td>{{d1.3}}</td>
+      <td>{{d1.4}}</td>
+      <td>
+        <a href="feedback?id={{d1.0}}">FEEDBACK</a>
+      </td>
+  </tr>
+              {% endfor %}
+  
+</table>

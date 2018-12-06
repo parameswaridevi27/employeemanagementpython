@@ -1,0 +1,34 @@
+<table border=2 >
+        <body background="../static/img11.png">
+    <style>
+        body{
+            background-repeat: no-repeat;
+            background-size: cover
+        }
+        h1{
+            color:darkmagenta
+        }
+        td{
+          color:red
+          }
+    </style>
+        
+  <h1>Feedback</h1>
+  <thead>
+      <tr>
+          <th>Project</th>
+          <th>Marks</th>
+          <th>Date</th>
+      </tr>
+  </thead>
+  
+   <tbody>
+        {% for d1 in data %}
+<tr>
+  <td>{{d1.1}}</td>
+  <td>{{d1.2}}</td>
+  <td>{{d1.3}}</td>
+</tr>
+{% endfor %}      
+
+</table>

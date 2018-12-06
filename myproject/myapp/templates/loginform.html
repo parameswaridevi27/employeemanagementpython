@@ -1,0 +1,42 @@
+<form action="" method="POST">
+    {% csrf_token %}
+   
+    <table>
+        <style>
+            body{
+                background-repeat: no-repeat;
+                background-size: cover
+            }
+            td{
+                font-family: cursive;
+                color:darkblue;
+                text-align: center
+            }
+            h1{
+                font-family:cursive;
+                color:black
+            }
+        </style>
+      
+    <body background="../static/img3.jpg">
+     <h1>LOGIN PAGE</h1>
+    <tr>
+      <td align='center'>Username:</td>
+      <td><input type='text' name='username'></td>
+    </tr>
+    
+    
+
+    <tr>
+     <td align='center'>Password:</td>
+     <td><input type='text' name='password'></td>
+    </tr>
+
+    <tr>
+     <td><button type="submit">LOGIN</button></td>
+    </tr>
+   </body>
+ </table>
+ {{d}}
+</form>
+ 

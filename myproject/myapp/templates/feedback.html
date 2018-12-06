@@ -1,0 +1,42 @@
+<form action="" method="POST"enctype="multipart/form-data">
+    {% csrf_token %}
+  <table align='center'>
+        <body background="../static/img11.png">  
+      <style>
+          body{
+              color:black;
+              font-family: cursive;
+              
+              background-repeat: no-repeat;
+              background-size: cover
+          }
+          h1{
+              color:black;
+              font-family: cursive
+          }
+      </style>
+         
+            <tr><td><h1>Trainee feedback</h1</td></tr>
+           
+            <tr>
+            <td align='center'><b>Project</b></td>
+            <td><input type="text" name="project" required></td>
+            </tr>
+
+            
+            <tr>
+            <td align='center'><b>Marks</b></td>
+            <td><input type="text" name="mark" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'><b>Date</b></td>
+            <td><input type="date" name="date" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'> <button type="submit">save</button></td>
+            </tr>
+</body>
+</table>
+</form>

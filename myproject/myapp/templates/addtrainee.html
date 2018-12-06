@@ -1,0 +1,68 @@
+<form action="" method="POST"enctype="multipart/form-data">
+    {% csrf_token %}
+  <table>
+      <style>
+          body{
+              color:skyblue;
+              font-family: cursive;
+              
+              background-repeat: no-repeat;
+              background-size: cover
+          }
+          h1{
+              color:floralwhite
+          }
+      </style>
+        <body background="../static/img6.jpg">   
+            <tr><td><h1>ADD TRAINEE</h1</td></tr>
+           
+            <tr>
+            <td align='center'><b>Trainee Name</b></td>
+            <td><input type="text" name="tname" required></td>
+            </tr>
+
+            <tr>
+            <td align='center' ><b>Location</b></td>
+            <td><input type="text" name="location" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'><b>Qualification</b></td>
+            <td><input type="text" name="qual" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'><b>Department</b></td>
+            <td><input type="text" name="dept" required></td>
+            </tr>
+
+           
+            <tr>
+            <td align='center'><b>Trainer Name</b></td>
+            <td>
+                <select name="trainername">
+                    {% for d in data %}
+                        <option value="{{d.0}}">{{d.1}}</option>
+                    {% endfor %}
+                </select>
+            </td>
+            </tr>
+
+            <tr>
+            <td align='center'><b>UserName</b></td>
+            <td><input type="text" name="uname" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'><b>Password</b></td>
+            <td><input type="text" name="pwd" required></td>
+            </tr>
+
+            <tr>
+            <td align='center'> <button type="submit">save</button></td>
+            </tr>
+        </body>
+                
+    </table>
+    </form>
+         
