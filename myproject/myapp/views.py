@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 import pymysql
 
-# Create your views here.
+
+#admin,trainer,trainee can login using username&password
+
 def loginform(request):
-    
     data=""
     con=pymysql.connect("localhost","root","","employeedb")
     c=con.cursor()
@@ -28,7 +29,7 @@ def loginform(request):
         elif(str(data1[0])=="trainee"):
             return HttpResponseRedirect("traineeview")
     return render(request,"loginform.html",{"data":data})
-
+#admin can add trainee & trainer ,assign password and username
 def addtrainer(request):
     data=""
     con=pymysql.connect("localhost","root","","employeedb")
@@ -82,22 +83,22 @@ def trainerview(request):
     con=pymysql.connect("localhost","root","","employeedb")
     c=con.cursor()
 
-    loginid=request.session.get("loginid")
+    loginid=request.session.get("loginid")  #loginid passed through session from login
     
-    c.execute("select tr_id from trainer_tab where l_id='"+str(loginid)+"'")
+    c.execute("select tr_id from trainer_tab where l_id='"+str(loginid)+"'") #using the loginid the trainerid is fetched
     data=c.fetchone()
-    c.execute("select * from trainee_tab where tr_id='"+str(data[0])+"'")
+    c.execute("select * from trainee_tab where tr_id='"+str(data[0])+"'") #the trainerid is used to get the datas from trainee table.
     data1=c.fetchall()
 
     request.session["trainerid"]=data[0]
 
     return render(request,"trainerview.html",{"data1":data1})
-
+#trainer can add,project,mark,date to the trainee
 def feedback(request):
     con=pymysql.connect("localhost","root","","employeedb")
     c=con.cursor()
-    trainerid=request.session.get("trainerid")
-    traineeid = request.GET.get("id")
+    trainerid=request.session.get("trainerid") #trainerid fetched using session
+    traineeid = request.GET.get("id") #from the feedback.html id is passed here
     if(request.POST):
         project = request.POST.get("project")
         marks = request.POST.get("mark")
@@ -105,7 +106,7 @@ def feedback(request):
         c.execute("insert into feeback_tab(project,marks,f_date,tr_id,t_id)values('"+str(project)+"','"+str(marks)+"','"+str(date)+"','"+str(trainerid)+"','"+str(traineeid)+"')")
         con.commit()
     return render(request,"feedback.html")
-
+#admin can view trainee name,location,qual,dept,trainer name,
 def adminview(request):
     data=""
     con=pymysql.connect("localhost","root","","employeedb")
